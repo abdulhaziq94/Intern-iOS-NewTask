@@ -14,11 +14,15 @@
 
 @implementation CommitDetailsTableViewController
 @synthesize CommitRepoURL;
+@synthesize NextRepoObject;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSURL *commitURL = [NSURL URLWithString:CommitRepoURL];
+    RepoObject *repoObj = NextRepoObject;
+    self.title = repoObj.Repo_url;
+    NSString *NewCommit_url = [repoObj.Commit_url stringByReplacingOccurrencesOfString:@"{/sha}" withString:@""];
+    NSURL *commitURL = [NSURL URLWithString:NewCommit_url];
     NSData *jsonData = [NSData dataWithContentsOfURL:commitURL];
     NSError *error = nil;
     id SpringBootJson = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];

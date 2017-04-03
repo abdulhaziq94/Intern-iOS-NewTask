@@ -76,14 +76,13 @@
         CommitDetailsTableViewController *commitDetailsViewController = segue.destinationViewController;
         
         RepoObject *repoObj = [self.RepoListArray objectAtIndex:indexPath.row];
-        NSString *repoCommit_url = [repoObj.Commit_url stringByReplacingOccurrencesOfString:@"{/sha}" withString:@""];
-        self.commit_url = repoCommit_url;
-        commitDetailsViewController.CommitRepoURL = self.commit_url;
-        
-        long i = indexPath.row;
-        if (indexPath.row == i) {
-            commitDetailsViewController.navigationItem.title = repoObj.Repo_url;
-        }
+//        NSString *repoCommit_url = [repoObj.Commit_url stringByReplacingOccurrencesOfString:@"{/sha}" withString:@""];
+        //self.commit_url = repoCommit_url;
+//        commitDetailsViewController.CommitRepoURL = repoCommit_url;
+        commitDetailsViewController.NextRepoObject = repoObj;
+
+//        commitDetailsViewController.navigationItem.title = repoObj.Repo_url;
+
      
 //        switch (indexPath.row) {
 //        case 0 :

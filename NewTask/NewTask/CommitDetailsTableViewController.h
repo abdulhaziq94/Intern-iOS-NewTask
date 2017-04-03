@@ -10,10 +10,13 @@
  */
 #import "CommitObject.h"
 #import "CommitDetailCell.h"
+#import "RepoObject.h"
 #import <UIKit/UIKit.h>
 
 @interface CommitDetailsTableViewController : UITableViewController
 
 @property (nonatomic,strong) NSMutableArray *CommitDetailArray;
 @property (nonatomic,strong) NSString *CommitRepoURL;
+@property (nonatomic,strong) id NextRepoObject;
+
 @end

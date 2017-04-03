@@ -12,6 +12,6 @@
 
 @synthesize Repo_url;
 @synthesize Commit_url;
-@synthesize Commit_url2;
+
 
 @end

@@ -12,5 +12,5 @@
 
 @property (nonatomic,strong) NSString *Repo_url;
 @property (nonatomic,strong) NSString *Commit_url;
-@property (nonatomic,strong) NSString *Commit_url2;
+
 @end
