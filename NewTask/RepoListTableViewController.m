@@ -54,7 +54,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return [self.RepoListArray count];
 }
 
 
@@ -80,38 +80,43 @@
         self.commit_url = repoCommit_url;
         commitDetailsViewController.CommitRepoURL = self.commit_url;
         
-        switch (indexPath.row) {
-        case 0:
-                commitDetailsViewController.navigationItem.title = @"Spring-Integration-in-Action";
-                break;
-        case 1:
-                commitDetailsViewController.navigationItem.title = @"spring-data-jdbc-ext";
-                break;
-        case 2:
-                commitDetailsViewController.navigationItem.title = @"spring-data-commons";
-                break;
-        case 3:
-                commitDetailsViewController.navigationItem.title = @"spring-data-graph";
-                break;
-        case 4:
-                commitDetailsViewController.navigationItem.title = @"spring-data-document-examples";
-                break;
-        case 5:
-                commitDetailsViewController.navigationItem.title = @"spring-data-graph-examples";
-                break;
-        case 6:
-                commitDetailsViewController.navigationItem.title = @"spring-data-jpa";
-                break;
-        case 7:
-                commitDetailsViewController.navigationItem.title = @"spring-build-gradle";
-                break;
-        case 8:
-                commitDetailsViewController.navigationItem.title = @"spring-batch-admin";
-                break;
-        default:
-                commitDetailsViewController.navigationItem.title = @"spring-amqp";
-                break;
+        long i = indexPath.row;
+        if (indexPath.row == i) {
+            commitDetailsViewController.navigationItem.title = repoObj.Repo_url;
         }
+     
+//        switch (indexPath.row) {
+//        case 0 :
+//                commitDetailsViewController.navigationItem.title = repoObj.Repo_url;
+//                break;
+//        case 1:
+//                commitDetailsViewController.navigationItem.title = @"spring-data-jdbc-ext";
+//                break;
+//        case 2:
+//                commitDetailsViewController.navigationItem.title = @"spring-data-commons";
+//                break;
+//        case 3:
+//                commitDetailsViewController.navigationItem.title = @"spring-data-graph";
+//                break;
+//        case 4:
+//                commitDetailsViewController.navigationItem.title = @"spring-data-document-examples";
+//                break;
+//        case 5:
+//                commitDetailsViewController.navigationItem.title = @"spring-data-graph-examples";
+//                break;
+//        case 6:
+//                commitDetailsViewController.navigationItem.title = @"spring-data-jpa";
+//                break;
+//        case 7:
+//                commitDetailsViewController.navigationItem.title = @"spring-build-gradle";
+//                break;
+//        case 8:
+//                commitDetailsViewController.navigationItem.title = @"spring-batch-admin";
+//                break;
+//        default:
+//                commitDetailsViewController.navigationItem.title = @"spring-amqp";
+//                break;
+//        }
     
     }
 }
